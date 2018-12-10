@@ -1,0 +1,19 @@
+#+TITLE: adler
+#+AUTHOR: phdenzel
+
+*** Rough plan for modelling the EAGLE lenses
+
+1) run models with GLASS (add point masses if necessary)
+   - GLASS configs: [[https://github.com/psaha/adler/tree/master/gls][gls/]]
+   - non-hires: [[https://mega.nz/#F!pDQmHSiT!CGRwgA9-13vGNEjYQkDuxg][state files]]
+   - hires:
+
+2) filter the lenses with [[https://github.com/phdenzel/model-zapper/releases][ModelZapper]]
+   - filtered states:
+
+3) add masks for source reconstruction and synthetic images
+   - masked data in [[https://github.com/psaha/adler/tree/master/json][json/]]
+   - images in [[https://github.com/psaha/adler/tree/master/imgs][imgs/]]
+   - synthetic images:
+
+4) compare synthetic images, mass maps, etc.
