@@ -26,8 +26,8 @@ include_prior(
     'magnification',
     'hubble_constant',
     'PLsmoothness3',
-#   'shared_h',
-    'external_mass',
+#    'shared_h',
+#    'external_mass',
     'external_shear'
 )
 

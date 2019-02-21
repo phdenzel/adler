@@ -26,8 +26,8 @@ include_prior(
     'magnification',
     'hubble_constant',
     'PLsmoothness3',
+    'source_position_quadrant',
 #   'shared_h',
-    'external_mass',
     'external_shear'
 )
 
@@ -46,12 +46,12 @@ globject(name)
 zlens(zl)
 
 pixrad(8)
-steepness(0, None)
+steepness(0.5, None)
 # hires(1, 5)
 
 smooth(2, include_central_pixel=False)
-local_gradient(45)
-shear(0.05)
+local_gradient(theta=45, theta_min=60)
+shear(0.1)
 # symm()
 
 # maprad(2)
@@ -88,15 +88,6 @@ source(zs, *pos_par_td)
 if tdelay:
     for i, td in enumerate(tdelay[:-1]):
         delay(ABCD[0], ABCD[i+1], [td-tderr[i], td+tderr[i]])
-
-
-###  External mass
-ext = [59, 69]  # between max and sad
-extx, exty = (ext[0]-lens[0])*px2arcsec[0], (ext[1]-lens[1])*px2arcsec[1]
-extm = PointMass(extx, exty, rc=0)
-# extm = PowerLawMass(extx, exty, 1.5)
-# extm = Isothermal(extx, exty)
-external_mass(extm, (0.1, 3))
 
 
 ###############################################################################

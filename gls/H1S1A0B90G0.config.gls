@@ -27,7 +27,6 @@ include_prior(
     'hubble_constant',
     'PLsmoothness3',
 #   'shared_h',
-    'external_mass',
     'external_shear'
 )
 
@@ -88,15 +87,6 @@ source(zs, *pos_par_td)
 if tdelay:
     for i, td in enumerate(tdelay[:-1]):
         delay(ABCD[0], ABCD[i+1], [td-tderr[i], td+tderr[i]])
-
-
-###  External mass
-ext = [82, 81]  # between max and sad
-extx, exty = (ext[0]-lens[0])*px2arcsec[0], (ext[1]-lens[1])*px2arcsec[1]
-extm = PointMass(extx, exty, rc=0)
-# extm = PowerLawMass(extx, exty, 1.5)
-# extm = Isothermal(extx, exty)
-external_mass(extm, (0.1, 3))
 
 
 ###############################################################################

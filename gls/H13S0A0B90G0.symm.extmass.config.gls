@@ -6,7 +6,7 @@ import numpy as np
 
 ### Meta info
 dpath = '/Users/phdenzel/adler'
-fname = 'H36S0A0B90G0'
+fname = 'H13S0A0B90G0.symm.extmass'
 fpath = os.path.join(dpath, fname)
 glass_basis('glass.basis.pixels', solver='rwalk')
 meta(author='GLSCFactory', notes='single-config-mode')
@@ -27,6 +27,7 @@ include_prior(
     'hubble_constant',
     'PLsmoothness3',
 #   'shared_h',
+    'external_mass',
     'external_shear'
 )
 
@@ -51,7 +52,7 @@ steepness(0, None)
 smooth(2, include_central_pixel=False)
 local_gradient(45)
 shear(0.01)
-# symm()
+symm()
 
 # maprad(2)
 
@@ -60,7 +61,7 @@ shear(0.01)
 zs = 3.0
 
 lens = [80.0, 80.0]
-ABCD = [[112.0, 83.0], [60.0, 92.0], [72.0, 103.0], [76.0, 54.0], [79.0, 69.0]]
+ABCD = [[100.0, 82.0], [64.0, 86.0], [77.0, 97.0], [79.0, 56.0], [80.0, 74.0]]  # TODO: try completely reversed order (except maximum)
 parity = ['min', 'min', 'sad', 'sad', 'max']
 px2arcsec = [0.0499999944857274, 0.0499999944857274]
 
@@ -87,6 +88,15 @@ source(zs, *pos_par_td)
 if tdelay:
     for i, td in enumerate(tdelay[:-1]):
         delay(ABCD[0], ABCD[i+1], [td-tderr[i], td+tderr[i]])
+
+
+###  External mass
+ext = [80, 71]  # between max and sad
+extx, exty = (ext[0]-lens[0])*px2arcsec[0], (ext[1]-lens[1])*px2arcsec[1]
+extm = PointMass(extx, exty, rc=0)
+# extm = PowerLawMass(extx, exty, 1.5)
+# extm = Isothermal(extx, exty)
+external_mass(extm, (0.1, 3))
 
 
 ###############################################################################
