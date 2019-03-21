@@ -17,3 +17,8 @@
    - synthetic images:
 
 4) compare synthetic images, mass maps, etc.
+
+
+*** Notes
+
+- H1S0A0B90: try moving last saddle point to the right

@@ -5,7 +5,7 @@ import numpy as np
 
 
 ### Meta info
-dpath = '/Users/phdenzel/adler/gls'
+dpath = '/Users/phdenzel/adler'
 fname = 'H2S1A0B90G0.minsadcombo'
 fpath = os.path.join(dpath, fname)
 glass_basis('glass.basis.pixels', solver='rwalk')
