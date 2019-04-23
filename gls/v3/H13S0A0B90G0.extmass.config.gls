@@ -51,17 +51,18 @@ hires(1, 5)
 
 smooth(2, include_central_pixel=False)
 local_gradient(80)
-shear(0.01)
+shear(0.1)
 # symm()
 
-# maprad(2)
+mapr = 2.6949751434416784
+maprad(mapr)
 
 
 ### Source
 zs = 3.0
 
 lens = [80.0, 80.0]
-ABCD = [[100.0, 82.0], [64.0, 86.0], [77.0, 97.0], [79.0, 56.0], [80.0, 74.0]]  # TODO: try completely reversed order (except maximum)
+ABCD = [[100.0, 82.0], [64.0, 86.0], [77.0, 97.0], [79.0, 56.0], [80.0, 74.0]]
 parity = ['min', 'min', 'sad', 'sad', 'max']
 px2arcsec = [0.0499999944857274, 0.0499999944857274]
 

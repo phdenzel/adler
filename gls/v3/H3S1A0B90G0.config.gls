@@ -54,8 +54,8 @@ local_gradient(theta=45, theta_min=60)
 shear(0.1)
 # symm()
 
-# maprad(2)
-
+mapr = 3.5728033756965596
+maprad(mapr)
 
 ### Source
 zs = 3.0

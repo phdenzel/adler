@@ -50,10 +50,11 @@ hires(1, 5)
 
 smooth(2, include_central_pixel=False)
 local_gradient(80)
-shear(0.01)
+shear(0.1)
 # symm()
 
-# maprad(2)
+mapr = 3.7663942488111744
+maprad(mapr)
 
 
 ### Source
