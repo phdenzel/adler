@@ -69,7 +69,7 @@ for i in range(len(ABCD)):
 
 if len(ABCD) % 2:
 		dist = [np.sqrt(p[0]**2 + p[1]**2) for p in ABCD[:-1]]
-else
+else:
 		dist = [np.sqrt(p[0]**2 + p[1]**2) for p in ABCD]
 maprad(min(dist)+max(dist))
 
